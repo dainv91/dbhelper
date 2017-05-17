@@ -1,5 +1,5 @@
-dbhelper
-=============
+# dbhelper
+
 AKB.Common.Data is a library for connect to multiple database. It supports SQL Server, MySQL and continue...
 
 # Setup
@@ -15,4 +15,3 @@ private IDbHelper _dbHelper = FactoryProducer.GetFactory("DB").GetDbHelper(Confi
 void _dbHelper.InsertBatch<T>(List<T> lst);
 int _dbHelper.ExecuteRawQuery(string query);
 DataTable _dbHelper.GetTable(string query, params KeyValuePair<string, object>[] parameters);
-```
