@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencies", "Dependencies", "{439FC8B6-B48E-437D-A5A1-919C39B85C2B}"
+	ProjectSection(SolutionItems) = preProject
+		Dependencies\log4net.dll = Dependencies\log4net.dll
+		Dependencies\MySql.Data.dll = Dependencies\MySql.Data.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AKB.Common.Data", "AKB.Common.Data\AKB.Common.Data.csproj", "{27C17BF7-1203-4FA9-BC9A-89AA48FF3C48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AKB.Test", "AKB.Test\AKB.Test.csproj", "{503AB2D3-1486-49E5-805D-F626CC2850C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{27C17BF7-1203-4FA9-BC9A-89AA48FF3C48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27C17BF7-1203-4FA9-BC9A-89AA48FF3C48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27C17BF7-1203-4FA9-BC9A-89AA48FF3C48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27C17BF7-1203-4FA9-BC9A-89AA48FF3C48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{503AB2D3-1486-49E5-805D-F626CC2850C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{503AB2D3-1486-49E5-805D-F626CC2850C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{503AB2D3-1486-49E5-805D-F626CC2850C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{503AB2D3-1486-49E5-805D-F626CC2850C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
