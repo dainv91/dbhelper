@@ -75,6 +75,9 @@ namespace AKB.Common.Data
             SELECT = 4
         }
 
+        private static readonly log4net.ILog Logger =
+            log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         /// <summary>
         /// Get table name of TableAttr instance
         /// </summary>
@@ -180,7 +183,7 @@ namespace AKB.Common.Data
                         }
                         catch (Exception ex)
                         {
-
+                            Logger.Error("Execute insert query exception", ex);
                             //sbErr.Append(ex.Message).Append(Environment.NewLine);
                         }
                     } // End for in list
@@ -191,6 +194,7 @@ namespace AKB.Common.Data
                     catch (Exception ex)
                     {
                         //sbErr.Append(ex.Message).Append(Environment.NewLine);
+                        Logger.Error("Commit exception", ex);
                         throw new Exception("Commit exception: " + ex.Message, ex);
                     }
                 }
@@ -200,9 +204,9 @@ namespace AKB.Common.Data
         /// <summary>
         /// Executes a query and returns effected rows count.
         /// </summary>
-        /// <param name="query">Query to execute</param>
-        /// <param name="parameters">Parameters</param>
-        /// <returns>Effected rows count</returns>
+        /// <param name="helper">Query to execute</param>
+        /// <param name="query"></param>
+        /// <returns></returns>
         public static int ExecuteNonQuery(IDbHelper helper, string query)
         {
             using (var connection = helper.CreateConnection())
@@ -221,6 +225,8 @@ namespace AKB.Common.Data
                     {
                         result = -1;
                         //sbErr.Append(ex.Message).Append(Environment.NewLine);
+                        Logger.Debug("Query: " + query);
+                        Logger.Error("Execute Query exception", ex);
                     }
 
                     return result;
