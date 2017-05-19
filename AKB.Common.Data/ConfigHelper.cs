@@ -5,19 +5,21 @@ namespace AKB.Common.Data
 {
     public static class ConfigHelper
     {
+        private const string CONN_STR_NAME = "LocalDB";
+
         public static string GetConnectionString()
         {
-            //Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-            //AppSettingsSection app = config.AppSettings;
-            //app.Settings.Add("x", "this is X");
-            //config.Save(ConfigurationSaveMode.Modified);
-            //var keys = app.Settings.AllKeys;
-            var conn = ConfigurationManager.ConnectionStrings["LocalDB"];
-            if (string.IsNullOrEmpty(conn.ConnectionString))
+            string connStr = null;
+            var conn = ConfigurationManager.ConnectionStrings[CONN_STR_NAME];
+            if (conn == null)
             {
-                throw new Exception("Please define ConnectionString name as LocalDB in App.config");
+                connStr = ConfigurationManager.AppSettings[CONN_STR_NAME];
             }
-            return conn.ConnectionString;
+            if (string.IsNullOrEmpty(connStr))
+            {
+                throw new Exception("Please define ConnectionString name as LocalDB in App.config / Web.config");
+            }
+            return connStr;
         }
 
         public static string GetDbHelperName()

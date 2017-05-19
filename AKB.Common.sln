@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AKB.Common.Data", "AKB.Comm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AKB.Test", "AKB.Test\AKB.Test.csproj", "{503AB2D3-1486-49E5-805D-F626CC2850C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AKB.Service.Client", "AKB.Service.Client\AKB.Service.Client.csproj", "{1EB7D506-C76E-48FC-8C8C-A46A2B76B8F5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{503AB2D3-1486-49E5-805D-F626CC2850C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{503AB2D3-1486-49E5-805D-F626CC2850C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{503AB2D3-1486-49E5-805D-F626CC2850C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EB7D506-C76E-48FC-8C8C-A46A2B76B8F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EB7D506-C76E-48FC-8C8C-A46A2B76B8F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EB7D506-C76E-48FC-8C8C-A46A2B76B8F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EB7D506-C76E-48FC-8C8C-A46A2B76B8F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
