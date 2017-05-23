@@ -11,10 +11,7 @@ namespace AKB.Common.Data
         {
             string connStr = null;
             var conn = ConfigurationManager.ConnectionStrings[CONN_STR_NAME];
-            if (conn == null)
-            {
-                connStr = ConfigurationManager.AppSettings[CONN_STR_NAME];
-            }
+            connStr = conn == null ? ConfigurationManager.AppSettings[CONN_STR_NAME] : conn.ConnectionString;
             if (string.IsNullOrEmpty(connStr))
             {
                 throw new Exception("Please define ConnectionString name as LocalDB in App.config / Web.config");

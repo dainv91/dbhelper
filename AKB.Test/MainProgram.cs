@@ -38,5 +38,6 @@ namespace AKB.Test
             var dt = _dbHelper.GetTable("select * From TTKhachHang");
             var b = "";
         }
+
     }
 }
