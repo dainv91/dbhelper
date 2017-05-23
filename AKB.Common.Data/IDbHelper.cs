@@ -75,6 +75,10 @@ namespace AKB.Common.Data
             SELECT = 4
         }
 
+        public const int QUERY_RESULT_SUCCESS = 0;
+        public const int QUERY_RESULT_EXECUTED = -1;
+        public const int QUERY_RESULT_EXCEPTION = -2;
+
         private static readonly log4net.ILog Logger =
             log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
@@ -220,11 +224,12 @@ namespace AKB.Common.Data
                     try
                     {
                         result = command.ExecuteNonQuery();
+                        if (result == QUERY_RESULT_EXECUTED) result = QUERY_RESULT_SUCCESS;
                     }
                     catch (Exception ex)
                     {
-                        result = -1;
-                        //sbErr.Append(ex.Message).Append(Environment.NewLine);
+                        //result = -1;
+                        result = QUERY_RESULT_EXCEPTION;
                         Logger.Debug("Query: " + query);
                         Logger.Error("Execute Query exception", ex);
                     }

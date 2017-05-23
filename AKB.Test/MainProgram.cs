@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using AKB.Common.Data;
 using AKB.Test.Model;
 
@@ -13,7 +14,8 @@ namespace AKB.Test
         private static void Main(string[] args)
         {
             //InsertBlob();
-            TestSelect();
+            //TestSelect();
+            CreateDatabase();
         }
 
         private static void InsertBlob()
@@ -39,5 +41,14 @@ namespace AKB.Test
             var b = "";
         }
 
+        private static void CreateDatabase()
+        {
+            var sb = new StringBuilder();
+            sb.Append("CREATE DATABASE CH1_DB;"); sb.Append(Environment.NewLine);
+
+            var query = sb.ToString();
+            var count = _dbHelper.ExecuteRawQuery(query);
+
+        }
     }
 }
