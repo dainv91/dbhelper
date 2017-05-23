@@ -54,6 +54,7 @@ namespace AKB.Common.Data
 
         /// <summary>
         /// Executes a raw query and returns effected rows count
+        /// If query is DDL script, return 0 when success, -2 when error occured.
         /// </summary>
         /// <param name="query">Query to execute</param>
         /// <returns>Effected rows count</returns>
