@@ -7,6 +7,12 @@ using AKB.Common.Data.Attr;
 
 namespace AKB.Common.Data
 {
+
+    /// <summary>
+    /// DbHelper Interface
+    /// 
+    /// Author: iadd
+    /// </summary>
     public interface IDbHelper
     {
         /// <summary>
@@ -53,7 +59,7 @@ namespace AKB.Common.Data
         void InsertBatch<T>(List<T> lst);
 
         /// <summary>
-        /// Executes a raw query and returns effected rows count
+        /// Executes a raw query and return affected rows count
         /// If query is DDL script, return 0 when success, -2 when error occured.
         /// </summary>
         /// <param name="query">Query to execute</param>
@@ -207,7 +213,8 @@ namespace AKB.Common.Data
         }
 
         /// <summary>
-        /// Executes a query and returns effected rows count. If query is DDL script, return 0 when success, -2 when error occured.
+        /// Executes a raw query and return affected rows count
+        /// If query is DDL script, return 0 when success, -2 when error occured.
         /// </summary>
         /// <param name="helper">Query to execute</param>
         /// <param name="query"></param>
