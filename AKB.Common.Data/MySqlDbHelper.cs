@@ -8,6 +8,15 @@ namespace AKB.Common.Data
 {
     public class MySqlDbHelper : IDbHelper
     {
+        public string ConnectionString { get; private set; }
+
+        public MySqlDbHelper(string connectionString = null)
+        {
+            ConnectionString = string.IsNullOrEmpty(connectionString)
+                ? ConfigHelper.GetConnectionString()
+                : connectionString;
+        }
+
         public DbParameter CreateParameter(string name, object value)
         {
             if (value == null)
@@ -20,7 +29,7 @@ namespace AKB.Common.Data
 
         public DbConnection CreateConnection()
         {
-            return new MySqlConnection(ConfigHelper.GetConnectionString());
+            return new MySqlConnection(ConnectionString);
         }
 
         public DbCommand CreateCommand(string query, DbConnection conn, DbTransaction tran)

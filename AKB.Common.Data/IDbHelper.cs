@@ -15,6 +15,8 @@ namespace AKB.Common.Data
     /// </summary>
     public interface IDbHelper
     {
+        string ConnectionString { get; }
+
         /// <summary>
         /// Create parameter object using name and value
         /// </summary>

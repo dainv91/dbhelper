@@ -2,6 +2,6 @@
 {
     public interface IAbstractFactory
     {
-        IDbHelper GetDbHelper(string dbName);
+        IDbHelper GetDbHelper(string dbName, string connectionString = null);
     }
 }

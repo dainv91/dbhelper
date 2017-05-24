@@ -2,16 +2,16 @@
 {
     public class DbFactory : IAbstractFactory
     {
-        public IDbHelper GetDbHelper(string dbName)
+        public IDbHelper GetDbHelper(string dbName, string connectionString = null)
         {
             if (string.IsNullOrEmpty(dbName)) return null;
 
             switch (dbName.ToUpper())
             {
                 case "MYSQL":
-                    return new MySqlDbHelper();
+                    return new MySqlDbHelper(connectionString);
                 case "SQLSERVER":
-                    return new SqlServerDbHelper();
+                    return new SqlServerDbHelper(connectionString);
                 default: return null;
             }
         }
