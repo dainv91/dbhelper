@@ -1,4 +1,4 @@
-# dbhelper
+# Dbhelper
 
 AKB.Common.Data is a library for connect to multiple database. It supports SQL Server, MySQL and continue...
 
